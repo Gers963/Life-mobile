@@ -285,7 +285,7 @@ const Tabs = createBottomTabNavigator({
                 <Icon
                     size={28}
                     name={focused ? "cloud-search" : "cloud-search-outline"}
-                    color={'#828fff'}
+                    color={'#af469b'}
                 />
             )
         })
@@ -295,7 +295,7 @@ const Tabs = createBottomTabNavigator({
         navigationOptions: () => ({
             tabBarLabel: () => null,
             tabBarIcon: ({ tintColor, focused }) => (
-                <MainButton color={'#828fff'} focused={focused} />
+                <MainButton color={'#af469b'} focused={focused} />
             )
         })
     },
@@ -304,7 +304,7 @@ const Tabs = createBottomTabNavigator({
         navigationOptions: () => ({
             tabBarLabel: 'Agendamentos',
             tabBarIcon: ({ tintColor, focused }) => (
-                <SchedulingButton color={'#828fff'} focused={focused} />
+                <SchedulingButton color={'#af469b'} focused={focused} />
             )
         })
     }

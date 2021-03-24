@@ -31,7 +31,7 @@ const drawerNavigator = createDrawerNavigator(
       };
 
       const logOut = async () => {
-        await AsyncStorage.removeItem('@coft:patientId');
+        await AsyncStorage.removeItem('access_token');
         await AsyncStorage.removeItem('@coft:userName');
         await AsyncStorage.removeItem('user');
         NavigationService.topNavigate('Auth', {});
@@ -45,8 +45,8 @@ const drawerNavigator = createDrawerNavigator(
           <SafeAreaView forceInset={{top: 'always', horizontal: 'never'}}>
             <View style={{flex: 1, alignItems: 'center'}}>
               <Image
-                style={{width: 134, height: 60, marginBottom: 8}}
-                source={require('../assets/images/clinic.png')}
+                style={{width: 170, height: 63, marginBottom: 8}}
+                source={require('../assets/images/lifeicon.png')}
               />
             </View>
             <ItemSeparator />

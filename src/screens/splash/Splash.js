@@ -33,10 +33,10 @@ class Splash extends Component {
   render() {
     let img = require('../images/logoName.png');
     setTimeout(async () => {
-      const id = await AsyncStorage.getItem('@coft:patientId');
+      const id = await AsyncStorage.getItem('access_token');
       if (id) {
-        const user = JSON.parse(await AsyncStorage.getItem('user'));
-        this.props.setPatient(user)
+        //const user = JSON.parse(await AsyncStorage.getItem('pet'));
+       //* this.props.setPatient(user)
         this.props.navigation.navigate('Home');
       } else {
         this.props.navigation.navigate('SignIn');

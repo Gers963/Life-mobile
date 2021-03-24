@@ -260,7 +260,7 @@ class TempScreen extends Component {
               </View>
               <TouchableOpacity
                 onPress={() => this.setState({ modalVisible: true })}>
-                <Label style={{ color: '#828fff' }}>termos</Label>
+                <Label style={{ color: '#af469b' }}>termos</Label>
               </TouchableOpacity>
               <View>
                 <Label style={{ color: 'gray' }}> de uso </Label>

@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         minWidth: 250,
         marginBottom: 150,
-        backgroundColor: '#828fff',
+        backgroundColor: '#af469b',
     },
     inputSelect: {
         flexDirection: 'row',

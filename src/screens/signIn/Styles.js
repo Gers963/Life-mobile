@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         minWidth: 250,
         marginBottom: Platform.OS == 'ios' ? -20 : 60,
-        backgroundColor: '#828fff',
+        backgroundColor: '#af469b',
     },
     buttonCad: {
         width: 40,
@@ -155,7 +155,7 @@ const styles = StyleSheet.create({
     },
     buttonText: {
         fontSize: 16,
-        color: '#828fff',
+        color: '#af469b',
     },
     small: {
         fontSize: 13,

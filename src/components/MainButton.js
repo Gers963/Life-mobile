@@ -13,8 +13,8 @@ export default class MainButton extends Component {
         const { color, focused } = this.props
 
         return (
-            <View style={{bottom: 8, borderWidth: 1, borderColor: (focused ? '#828fff' : '#fff'),  borderRadius: 29, width: 60, height: 60}}>
-                <View style={{borderRadius: 29, width: 58, height: 58, justifyContent: 'center', alignItems: 'center', backgroundColor: '#828fff', borderWidth: 3, borderColor: '#fff', opacity: (focused ? 1 : .5)}}>
+            <View style={{bottom: 8, borderWidth: 1, borderColor: (focused ? '#af469b' : '#fff'),  borderRadius: 29, width: 60, height: 60}}>
+                <View style={{borderRadius: 29, width: 58, height: 58, justifyContent: 'center', alignItems: 'center', backgroundColor: '#af469b', borderWidth: 3, borderColor: '#fff', opacity: (focused ? 1 : .5)}}>
                     <Icon
                         size={38} 
                         name={"home"}

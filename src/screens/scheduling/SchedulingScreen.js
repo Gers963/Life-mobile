@@ -165,7 +165,7 @@ class SchedulingScreen extends Component {
                 borderWidth: 0,
                 marginTop: 16,
                 marginLeft: '-17%',
-                color: '#6883CB',
+                color: '#af469b',
                 fontWeight: 'bold',
                 fontSize: 18,
                 alignSelf: 'center',
@@ -360,7 +360,7 @@ class SchedulingScreen extends Component {
           renderIcon={() => (
             <Icon name={'filter-variant'} style={styles.actionButtonIcon} />
           )}
-          buttonColor="#87d4de">
+          buttonColor="#8fb330">
           <ActionButton.Item
             buttonColor="#f8c012"
             title="Todos"

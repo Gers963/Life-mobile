@@ -189,17 +189,14 @@ class HomeScreen extends Component {
                 <Thumbnail
                   large
                   source={{
-                    uri: this.props.patient.rows.thumbnail
-                      ? this.props.patient.rows.thumbnail.key
-                      : 'https://jornalggn.com.br/sites/default/files/u16/imagem-sem-foto-de-perfil-do-facebook-1348864936180_956x5001.jpg',
-                  }}
+                    uri: 'https://jornalggn.com.br/sites/default/files/u16/imagem-sem-foto-de-perfil-do-facebook-1348864936180_956x5001.jpg'}}
                 />
               </TouchableOpacity>
               <View style={{ padding: 7, margin: 8 }}>
                 <Text
                   style={{
                     fontFamily: 'Roboto',
-                    color: '#828fff',
+                    color: '#af469b',
                     fontWeight: 'bold',
                     fontSize: 18,
                     marginTop: 4,
@@ -251,7 +248,7 @@ class HomeScreen extends Component {
               fontWeight: 'bold',
               fontSize: 22,
               paddingLeft: 10,
-              color: '#828fff',
+              color: '#af469b',
             }}>
             {' '}
             Nossos serviços{' '}
@@ -324,7 +321,7 @@ class HomeScreen extends Component {
             fontWeight: 'bold',
             paddingLeft: 10,
             paddingTop: 8,
-            color: '#828fff',
+            color: '#af469b',
           }}>
           Últimos agendamentos
         </Text>
@@ -403,14 +400,14 @@ class HomeScreen extends Component {
                     {item.calendarTime.calendar.telemedicina ? (
                       <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingLeft: 19 }}>
                         <View style={{ flexDirection: 'row' }}>
-                          <Icon name={"laptop"} size={19} color={'#828fff'} />
+                          <Icon name={"laptop"} size={19} color={'#af469b'} />
                           <Text style={{ fontSize: 13, paddingLeft: 5, color: 'grey', fontWeight: 'bold' }}>Online</Text>
                         </View>
                       </View>
                     ) : (
                         <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingLeft: 19 }}>
                           <View style={{ flexDirection: 'row' }}>
-                            <Icon name={"hospital-building"} size={19} color={'#828fff'} />
+                            <Icon name={"hospital-building"} size={19} color={'#af469b'} />
                             <Text style={{ fontSize: 13, paddingLeft: 5, color: 'grey', fontWeight: 'bold' }}>Presencial</Text>
                           </View>
                         </View>
@@ -464,10 +461,10 @@ class HomeScreen extends Component {
                               percent={100}
                               radius={25}
                               borderWidth={3}
-                              color="#828fff"
+                              color="#af469b"
                               shadowColor="#D8F3DC"
                               bgColor="#fff">
-                              <Icon name={'pill'} size={19} color={'#828fff'} />
+                              <Icon name={'pill'} size={19} color={'#af469b'} />
                             </ProgressCircle>
                           )}
                       </View>
