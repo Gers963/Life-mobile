@@ -144,14 +144,14 @@ class ProfessionalScreen extends Component {
               currentPosition={0}
               customStyles={{
                 labelColor: '#000',
-                separatorFinishedColor: '#000',
-                separatorUnFinishedColor: '#8eb330',
-                stepStrokeCurrentColor: '#9058a0',
+                separatorFinishedColor: '#94ADEE',
+                separatorUnFinishedColor: '#94ADEE',
+                stepStrokeCurrentColor: '#94ADEE',
                 currentStepLabelColor: '#000',
-                stepIndicatorUnFinishedColor: '#9058a0',
+                stepIndicatorUnFinishedColor: '#94ADEE',
                 stepIndicatorFinishedColor: '#94ADEE',
                 stepIndicatorLabelCurrentColor: '#000',
-              }}
+            }}
             />
           </View>
         </View>

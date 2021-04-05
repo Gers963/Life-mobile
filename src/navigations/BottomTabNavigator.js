@@ -39,10 +39,10 @@ import SingUp from '../screens/singup/SingUp';
 import Historic from '../screens/appointment/AppointmentHistoric';
 import Splash from '../screens/splash/Splash';
 import Doctor from '../screens/doctor/Doctor';
-import HomeN from '../screens/Home/Home';
 import Profile from '../screens/profile/ProfileScreen';
 import VideoCall from '../screens/scheduling/Telemedicine';
 import ProfessionalListScreen from '../screens/service/ProfessionalList';
+import ShowerScreem from '../screens/shower/ShowerScreem';
 
 const SemTab = createStackNavigator({
     Splash: {
@@ -67,13 +67,6 @@ const HomeTab = createStackNavigator({
 
     Home: {
         screen: HomeScreen,
-        navigationOptions: {
-            headerShown: false
-        }
-    },
-
-    HomeN: {
-        screen: HomeN,
         navigationOptions: {
             headerShown: false
         }
@@ -191,7 +184,7 @@ const HomeTab = createStackNavigator({
         screen: DiseaseScreen,
         navigationOptions: { headerShown: false }
     },
-    
+
     LocationScreen: {
         screen: LocationScreen,
         navigationOptions: { headerShown: false }
@@ -207,7 +200,7 @@ const HomeTab = createStackNavigator({
         navigationOptions: { headerShown: false }
     },
 
-    OnlineOrLocalScreen:{
+    OnlineOrLocalScreen: {
         screen: OnlineOrLocal,
         navigationOptions: {
             headerShown: false
@@ -237,7 +230,12 @@ const HomeTab = createStackNavigator({
     SpecialityScreen: {
         screen: SpecialityScreen,
         navigationOptions: { headerShown: false }
-    }    
+    },
+
+    ShowerScreem: {
+        screen: ShowerScreem,
+        navigationOptions: { headerShown: false }
+    }
 });
 
 const CooperatorTab = createStackNavigator({

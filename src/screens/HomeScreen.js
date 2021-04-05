@@ -43,28 +43,8 @@ class HomeScreen extends Component {
     patient: PropTypes.object,
   };
 
-  static navigationOptions = () => {
-    return {
-      headerTitle: () => (
-        <View>
-          <Image
-            style={{ width: 103, height: 43 }}
-            source={require('../assets/images/clinic.png')}
-          />
-        </View>
-      ),
-      headerLeft: () => <DrawerNavigationIcon />,
-      headerRight: () => <NotificationIcon />,
-      headerStyle: { backgroundColor: '#f3f6fe' },
-    };
-  };
-
   constructor(props) {
     super(props);
-    this.onPress = this.onPress.bind(this);
-    this.onPressSeeMoreScheduling = this.onPressSeeMoreScheduling.bind(this);
-    this.load = this.load.bind(this);
-    this.onRefresh = this.onRefresh.bind(this);
     this.onEndReached = this.onEndReached.bind(this);
 
     this.state = {
@@ -73,6 +53,7 @@ class HomeScreen extends Component {
       name: '',
     };
   }
+
 
   async componentDidMount() {
     const active = await AsyncStorage.getItem('access_token');
@@ -83,58 +64,25 @@ class HomeScreen extends Component {
       this.props.navigation.navigate('Auth', {});
       Alert.alert('ClinicLabs', 'Relaize seu login novamnete.');
     }
-    this.loadServiceType();
-    this.loadScheduling();
-    this.onRefresh();
+
     this.setState({
       name: await AsyncStorage.getItem('@coft:userName'),
     });
   }
 
-  loadServiceType = async () => {
-    if (this.props.serviceType.isLoading) {
-      return;
-    }
-    this.props.serviceTypeList(this.props.serviceType.skip);
-  };
-
-  onRefresh = async () => {
-    if (this.props.scheduling.isLoading) {
-      return;
-    }
-    this.load();
-  };
-
-  load = () => {
-    this.props.schedulingList(this.props.scheduling.skip);
-  };
-
   onEndReached = () => {
     const { reached } = this.state;
     if (!reached) {
-      this.load();
       this.setState({ reached: true });
     }
   };
 
-  loadScheduling = async () => {
-    if (this.props.scheduling.isLoading) {
-      return;
-    }
-    this.props.schedulingList(this.props.scheduling.skip);
-  };
-
   onPress = item => {
-    if (item.name.substr(0, 1) != 'C') {
-      this.props.navigation.navigate('ExamLabOrSpeciality', { item });
+    if (item === 0){
+      this.props.navigation.navigate('ExamLabOrSpeciality')
     } else {
-      this.props.navigation.navigate('OnlineOrLocalScreen', { item });
+      this.props.navigation.navigate('ShowerScreem')
     }
-  };
-
-  onPres = item => {
-    console.log(item);
-    this.props.schedulingCurrent(item);
   };
 
   onPressSeeMoreScheduling() {
@@ -142,8 +90,6 @@ class HomeScreen extends Component {
   }
 
   render() {
-    const { width } = Dimensions.get('window');
-    const itemWidth = width / 4;
 
     const color = [
       '#87C4C0',
@@ -163,11 +109,6 @@ class HomeScreen extends Component {
       '#F4A828',
       '#185A9A',
     ];
-
-    const dateFormatter = timestamp => {
-      var date = new Date(parseInt(timestamp));
-      return date.toLocaleString();
-    };
 
     return (
       <SafeAreaView style={styles.container}>
@@ -189,7 +130,8 @@ class HomeScreen extends Component {
                 <Thumbnail
                   large
                   source={{
-                    uri: 'https://jornalggn.com.br/sites/default/files/u16/imagem-sem-foto-de-perfil-do-facebook-1348864936180_956x5001.jpg'}}
+                    uri: 'https://jornalggn.com.br/sites/default/files/u16/imagem-sem-foto-de-perfil-do-facebook-1348864936180_956x5001.jpg'
+                  }}
                 />
               </TouchableOpacity>
               <View style={{ padding: 7, margin: 8 }}>
@@ -264,39 +206,63 @@ class HomeScreen extends Component {
                 width: Platform.OS == 'ios' ? '100%' : '21%',
                 marginLeft: -12,
               }}>
-              {this.props.serviceType.rows.map((item, index) => {
-                return (
-                  <TouchableOpacity
-                    onPress={() => this.onPress(item)}
-                    key={index}>
-                    <Card
+              <TouchableOpacity
+                onPress={() => this.onPress(0)}>
+                <Card
+                  style={{
+                    marginLeft: 15,
+                    width: Platform.OS == 'ios' ? 165 : 155,
+                    height: 75,
+                    alignItems: 'center',
+                    borderColor: '#af469b',
+                    backgroundColor: '#af469b',
+                    borderRadius: 6,
+                  }}>
+                  <Text />
+                  <CardItem style={{ backgroundColor: '#af469b' }}>
+                    <Text
                       style={{
-                        marginLeft: 15,
-                        width: Platform.OS == 'ios' ? 165 : 155,
-                        height: 75,
-                        alignItems: 'center',
-                        borderColor: color[index],
-                        backgroundColor: color[index],
-                        borderRadius: 6,
+                        marginTop: Platform.OS == 'ios' ? '-2%' : -8,
+                        color: '#FFF',
+                        fontSize: 21,
+                        fontWeight: '700',
                       }}>
-                      <Text />
-                      <CardItem style={{ backgroundColor: color[index] }}>
-                        <Text
-                          style={{
-                            marginTop: Platform.OS == 'ios' ? '-2%' : -8,
-                            color: '#FFF',
-                            fontSize: 21,
-                            fontWeight: '700',
-                          }}>
-                          {item.name}
+                      Consulta
                         </Text>
-                      </CardItem>
-                      <Text />
-                    </Card>
-                    <Text />
-                  </TouchableOpacity>
-                );
-              })}
+                  </CardItem>
+                  <Text />
+                </Card>
+                <Text />
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => this.onPress(1)}>
+                <Card
+                  style={{
+                    marginLeft: 15,
+                    width: Platform.OS == 'ios' ? 165 : 155,
+                    height: 75,
+                    alignItems: 'center',
+                    borderColor: '#af469b',
+                    backgroundColor: '#af469b',
+                    borderRadius: 6,
+                  }}>
+                  <Text />
+                  <CardItem style={{ backgroundColor: '#af469b' }}>
+                    <Text
+                      style={{
+                        marginTop: Platform.OS == 'ios' ? '-2%' : -8,
+                        color: '#FFF',
+                        fontSize: 21,
+                        fontWeight: '700',
+                      }}>
+                      Banhos
+                        </Text>
+                  </CardItem>
+                  <Text />
+                </Card>
+                <Text />
+              </TouchableOpacity>
+
             </View>
           </ScrollView>
           <View
@@ -405,13 +371,13 @@ class HomeScreen extends Component {
                         </View>
                       </View>
                     ) : (
-                        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingLeft: 19 }}>
-                          <View style={{ flexDirection: 'row' }}>
-                            <Icon name={"hospital-building"} size={19} color={'#af469b'} />
-                            <Text style={{ fontSize: 13, paddingLeft: 5, color: 'grey', fontWeight: 'bold' }}>Presencial</Text>
-                          </View>
+                      <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingLeft: 19 }}>
+                        <View style={{ flexDirection: 'row' }}>
+                          <Icon name={"hospital-building"} size={19} color={'#af469b'} />
+                          <Text style={{ fontSize: 13, paddingLeft: 5, color: 'grey', fontWeight: 'bold' }}>Presencial</Text>
                         </View>
-                      )}
+                      </View>
+                    )}
                     <View
                       style={{
                         flexDirection: 'row',
@@ -447,26 +413,26 @@ class HomeScreen extends Component {
                         {item.calendarTime.calendar.subService.service.type.name
                           .substr(0, 1)
                           .toUpperCase() == 'E' ? (
-                            <ProgressCircle
-                              percent={100}
-                              radius={25}
-                              borderWidth={3}
-                              color="#87d4de"
-                              shadowColor="#D8F3DC"
-                              bgColor="#fff">
-                              <Icon name={'dna'} size={19} color={'#87d4de'} />
-                            </ProgressCircle>
-                          ) : (
-                            <ProgressCircle
-                              percent={100}
-                              radius={25}
-                              borderWidth={3}
-                              color="#af469b"
-                              shadowColor="#D8F3DC"
-                              bgColor="#fff">
-                              <Icon name={'pill'} size={19} color={'#af469b'} />
-                            </ProgressCircle>
-                          )}
+                          <ProgressCircle
+                            percent={100}
+                            radius={25}
+                            borderWidth={3}
+                            color="#87d4de"
+                            shadowColor="#D8F3DC"
+                            bgColor="#fff">
+                            <Icon name={'dna'} size={19} color={'#87d4de'} />
+                          </ProgressCircle>
+                        ) : (
+                          <ProgressCircle
+                            percent={100}
+                            radius={25}
+                            borderWidth={3}
+                            color="#af469b"
+                            shadowColor="#D8F3DC"
+                            bgColor="#fff">
+                            <Icon name={'pill'} size={19} color={'#af469b'} />
+                          </ProgressCircle>
+                        )}
                       </View>
                     </View>
                   </View>
@@ -482,7 +448,6 @@ class HomeScreen extends Component {
                   )
                   : this.props.scheduling.rows
               }
-              onRefresh={this.onRefresh}
               onEndReached={this.onEndReached}
               onEndReachedThreshold={0.5}
               ItemSeparatorComponent={ItemSeparator}
