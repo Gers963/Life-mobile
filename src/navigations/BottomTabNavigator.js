@@ -43,6 +43,7 @@ import Profile from '../screens/profile/ProfileScreen';
 import VideoCall from '../screens/scheduling/Telemedicine';
 import ProfessionalListScreen from '../screens/service/ProfessionalList';
 import ShowerScreem from '../screens/shower/ShowerScreem';
+import calendarScreen from '../screens/calendar/calendarScreen';
 
 const SemTab = createStackNavigator({
     Splash: {
@@ -234,6 +235,10 @@ const HomeTab = createStackNavigator({
 
     ShowerScreem: {
         screen: ShowerScreem,
+        navigationOptions: { headerShown: false }
+    },
+    CalendarScreen: {
+        screen: calendarScreen,
         navigationOptions: { headerShown: false }
     }
 });

@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Thumbnail } from 'native-base';
-import { BASE_URI } from '../../constants/config';
-import { authHeaders } from '../../api/utils';
+import { View, Text } from 'native-base';
 import {
     FlatList,
     TouchableOpacity,
@@ -10,15 +8,12 @@ import {
 } from 'react-native';
 import StepIndicator from 'react-native-step-indicator';
 import Arrow from '../../navigations/BackNavigationIcon';
-import { TextInput } from 'react-native-gesture-handler';
-import Icon from 'react-native-vector-icons/MaterialIcons';
-import { ItemSeparator, EmptyList, CheckBox } from '../../components';
+import {  EmptyList} from '../../components';
 import { ProgressCircle } from 'react-native-svg-charts';
 
 class ShowerScreem extends Component {
     constructor(props) {
         super(props);
-        this.onPress = this.onPress.bind(this);
         this.state = {
             showerType: [
                 {
@@ -43,9 +38,8 @@ class ShowerScreem extends Component {
 
     async componentDidMount() { }
 
-    onPress = (route, item) => {
-        const schedState = this.state.item;
-        this.props.navigation.navigate(route, { item, schedState });
+    onPress = () => {
+        this.props.navigation.navigate('CalendarScreen');
     };
 
     render() {
@@ -105,9 +99,7 @@ class ShowerScreem extends Component {
                 <FlatList
                     style={{ paddingLeft: 10, backgroundColor: '#fff' }}
                     renderItem={({ item }) => (
-                        <TouchableOpacity onPress={() => {
-                            
-                        }}>
+                        <TouchableOpacity onPress={() => { this.onPress() }}>
                             <View style={{ marginTop: 22, marginEnd: 10, margin: 4 }}>
                                 <Text
                                     style={{

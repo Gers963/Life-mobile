@@ -79,7 +79,7 @@ class HomeScreen extends Component {
 
   onPress = item => {
     if (item === 0){
-      this.props.navigation.navigate('ExamLabOrSpeciality')
+      this.props.navigation.navigate('CalendarScreen')
     } else {
       this.props.navigation.navigate('ShowerScreem')
     }
